@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PAINT BALL AREANA</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>   
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="shoot.js"></script>
+    
+  </head>
+  <body>
+    <a-scene id="scene">
+
+      <!--Assets-->
+      <a-assets>
+        <a-asset-item
+        id="shooter"
+        src="./models/shooter/gun.gltf"
+        ></a-asset-item>
+      </a-assets>
+      <a-entity
+      id="environment"
+      environment="preset:default;skyType:gradient;lighting:point"
+      ></a-entity>
+      
+      <!--Light-->
+      <a-entity light="type: ambient; color: yellow; intensity:0.5"></a-entity>
+
+      <!--Camera and Cursor-->
+      <a-entity
+        id="camera"
+        camera
+        position="0 1.6 0"
+        wasd-controls
+        look-controls="pointerLockEnabled: false"        
+      >
+      <a-entity
+      id="weapon"
+      gltf-model="#shooter"
+      position="0 -4.4 3"
+      rotation="0 180 0"
+      scale="0.35 1 1"
+      ></a-entity>
+        
+        <a-cursor></a-cursor>        
+      </a-entity>
+
+      <!--Ball-->
+      <a-entity ball></a-entity>
+
+      <!--Ground-->
+      <a-plane
+        id="ground"
+        repeat="5 5"
+        position="0 1 0"
+        rotation="-90 0 0"
+        height="200"
+        width="200"
+        color="#FBF2D4"
+        static-body
+        visible="true"
+      >
+      </a-plane>
+      
+      <a-box id="box1" position="0 0.5 -6.33437" color="pink" depth="1" height="1.5" width="10"></a-box>
+    <a-box id="box2" position="-5.63047 0.5 -9.65585" color="pink" depth="1" height="4" width="10"></a-box>
+    <a-box id="box2" position="-5.63047 0.5 -9.65585" color="pink" depth="1" height="4" width="10"></a-box>
+    <a-box id="box3" position="2.5 0.5 -17.4559" color="yellow" depth="1" height="4" width="10"></a-box>
+    <a-box id="box4" position="0 0.5 -21.58323" color="yellow" depth="1" height="4" width="10"></a-box>
+    <a-box id="box5" position="-12.01326 0.5 -14.59535" color="#16A2F6" depth="1" height="4" width="10"></a-box>
+    <a-box id="box6" position="-7.73232 0.5 -22.17969" color="#16A2F6" depth="10" height="4" width="1"></a-box>
+    <a-box id="box7" position="-8.54977 0.5 -5.3525" color="red" depth="10" height="4" width="1"></a-box>
+    <a-box id="box8" position="-4.67013 0.5 -18.0932" color="red" depth="10" height="4" width="1"></a-box>
+    <a-box id="box9" position="5.90667 0.5 -15" color="blue" depth="10" height="4" width="1"></a-box>
+    <a-box id="box10" position="3.59768 0.5 -8.18822" color="blue" depth="10" height="4" width="1"></a-box>
+    <a-box id="box11" position="7.63783 0.5 -28.06952" color="#16A2F6" depth="10" height="4" width="1"></a-box>
+    <a-box id="box12" position="-0.82929 0.5 -30.18869" color="red" depth="1" height="4" width="10"></a-box>
+  </body>
+</html>
